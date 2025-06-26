@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 func main() {
@@ -19,6 +20,9 @@ func main() {
 	colors2 = remove(colors2, len(colors2)-1)
 
 	fmt.Println(colors2)
+
+	sort.Strings(colors2)
+	fmt.Println("sorted: ", colors2)
 }
 
 func remove(slice []string, i int) []string {

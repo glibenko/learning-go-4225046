@@ -3,45 +3,41 @@ package main
 import "fmt"
 
 func main() {
+	colors := []string{"red", "green", "blue", "yellow", "purple"}
 
-	// colors := []string{"Red", "Green", "Blue"}
-	// for i := 0; i < len(colors); i++ {
-	// 	println(colors[i])
-	// }
+	for i := 0; i < len(colors); i++ {
+		println(colors[i])
+	}
 
-	// for i := range colors {
-	// 	println(colors[i])
-	// }
+	for _, v := range colors {
+		println(v)
+	}
 
-	// for _, color := range colors {
-	// 	println(color)
-	// }
+	states := make(map[string]string)
+	states["CA"] = "California"
+	states["TX"] = "Texas"
+	states["NY"] = "New York"
 
-	// states := make(map[string]string)
-	// states["WA"] = "Washington"
-	// states["OR"] = "Oregon"
-	// states["CA"] = "California"
-	// for state, _ := range states {
-	// 	println(states[state])
-	// }
+	for k, v := range states {
+		println(k, "is", v)
+	}
 
 	value := 0
 	sum := 0
-	for value < 5 {
+	for value < 10 {
 		sum += value
-		fmt.Printf("Value: %v\n", value)
-		fmt.Printf("Sum: %v\n", sum)
 		value++
+		fmt.Println("Current value:", value, "Sum so far:", sum)
 	}
 
 	sum = 1
 	for sum < 1000 {
-		sum += sum
+		sum *= 2
+		fmt.Println("Current sum:", sum)
 		if sum > 200 {
 			goto theEnd
 		}
 	}
-	theEnd : println("end of program")
-	fmt.Printf("Sum: %v\n", sum)
-
+theEnd:
+	fmt.Println("Reached the end of the loop with sum:", sum)
 }
